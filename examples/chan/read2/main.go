@@ -18,5 +18,7 @@ func main() {
 			log.Println(<-chan1)
 		}
 	}()
-	select {}
+	//select {}
+	for {
+	}
 }

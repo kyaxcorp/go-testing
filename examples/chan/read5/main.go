@@ -10,6 +10,10 @@ func main() {
 	chan1 := make(chan bool)
 
 	go func() {
+		chan1 <- true
+	}()
+
+	go func() {
 		for {
 
 			time.Sleep(time.Second)
@@ -20,10 +24,6 @@ func main() {
 				log.Println(chanVal)
 			}
 		}
-	}()
-
-	go func() {
-		chan1 <- true
 	}()
 
 	for {
